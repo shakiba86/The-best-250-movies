@@ -1,0 +1,26 @@
+.coming-card {
+    position: relative;
+  }
+  
+  .coming-card a.add-to-calendar {
+    position: relative;
+    text-decoration: none;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.3s;
+  }
+  
+  .coming-card a:hover {
+    background: #191919;
+  }
+  

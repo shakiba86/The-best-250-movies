@@ -1,0 +1,25 @@
+.schedule .pagination {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  list-style: none;
+  }
+  
+.schedule .pagination .page-item {
+  margin: 0 5px;
+}
+.schedule .pagination .page-item .page-link {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  color:#000;
+  border-radius:3px;
+  cursor: pointer;
+}
+  
+.schedule .pagination .page-item.active .page-link {
+     color: #000;
+    background-color: #ff6c1c;
+    background-image: linear-gradient(to right, #ff6c1c, #f0a401);
+}
+  
+  

@@ -1,0 +1,105 @@
+/* 
+.movie-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 50px 0 40px 0;
+   }
+
+.movie-list .movie {
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+ .movie-list .movie:hover {
+    transform: scale(1.05);
+}
+
+.movie-list .movie .movie-poster {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-list .movie h3 {
+    font-size: 1.2rem;
+    margin: 15px 0 5px;
+    color:#f1f1f1;
+} */
+/* Add a background image to the entire page */
+.single-genre-header {
+    background-image: url('/public/assets/horror.webp');
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    height: 60vh;
+    min-height: 400px;
+}
+.single-genre-header::after{
+    position: absolute;
+    content: "";
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(180deg,#000000 0%, #1414143D 100%);
+    opacity: 1;
+}
+.single-genre-title{
+    z-index: 2;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+    padding-top: 220px;
+    animation: fade-in 3s ease;
+}
+.single-genre-title h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+.single-genre-title h3 {
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+/* Styling for the movie list */
+.movie-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 50px 0 40px 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for each movie item */
+.movie-list .movie {
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+/* Hover effect for movie items */
+.movie-list .movie:hover {
+    transform: scale(1.05);
+}
+
+/* Styling for movie posters */
+.movie-list .movie .movie-poster {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for movie titles */
+.movie-list .movie h3 {
+    font-size: 1.2rem;
+    margin: 15px 0 5px;
+}

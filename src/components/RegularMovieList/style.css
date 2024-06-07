@@ -1,0 +1,55 @@
+.movie-section {
+    padding:150px 0;
+}
+.movie-section .section-title {
+    position: relative;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.movie-section .section-title:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -30px;
+    height: 5px;
+    width: 50%;
+    background: linear-gradient(
+      90deg,
+      var(--primary),
+      var(--primary),
+      transparent
+    );
+    
+}
+.movie-section .content .movie-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 50px 0 40px 0;
+   }
+
+.movie-section .content .movie-list .movie {
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.movie-section .content .movie-list .movie:hover {
+    transform: scale(1.05);
+}
+.movie-section .content .movie-list .movie .movie-poster {
+    width: 100%;
+    height:auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-section .content .movie-list .movie h3 {
+    font-size: 1.2rem;
+    margin: 15px 0 5px;
+    color:#f1f1f1;
+}

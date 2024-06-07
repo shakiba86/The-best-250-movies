@@ -1,0 +1,96 @@
+
+.filter .filter-wrapper {
+    text-align: center;
+}
+.filter .filter-wrapper h1 {
+    font-size: 3rem;
+    /* margin-bottom: 100px;
+    margin-top:80px; */
+}
+.filter ul.buttons {
+    padding: 0;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+    gap: 10px;
+}
+
+.filter ul li .extra-large-button {
+    background-color: #f1f1f1;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+   }
+   .filter ul li .extra-large-button h3 {
+    font-size:1.2rem;
+   }
+   .filter ul li .extra-large-button:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.filter ul li .extra-large-button.active {
+    color: white;
+    background-color: #ff6c1c;
+    background-image: linear-gradient(to right, #ff6c1c, #f0a401);
+}
+
+.filter .content .movie-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 50px 0 40px 0;
+   }
+
+.filter .content .movie-list .movie {
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.filter .content .movie-list .movie:hover {
+    transform: scale(1.05);
+}
+
+.filter .content .movie-list .movie .movie-poster {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter .content .movie-list .movie h3 {
+    font-size: 1.2rem;
+    margin: 15px 0 5px;
+    color:#f1f1f1;
+}
+
+.filter .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    gap: 10px;
+}
+
+.filter .pagination button {
+    background-color:#f1f1f1;
+    color:#333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em;
+}
+
+.filter .pagination button:hover {
+    background-color: #ff6c1c;
+    background-image: linear-gradient(to right, #ff6c1c, #f0a401);
+}
+
+.filter .pagination button:disabled {
+    background-color: #e0e0e0;
+    transform: none;
+}

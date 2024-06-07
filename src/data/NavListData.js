@@ -6,8 +6,8 @@ export const NavListData = [
         active : true,
     },
     {
-        title :"film",
-        link : "#",
+        title :"movies",
+        link : "/movies",
         id :2,
         active : false,
     },
@@ -18,15 +18,28 @@ export const NavListData = [
         active : false,
     },
     {
-        title :"kids",
-        link : "#",
-        id :4,
-        active : false,
+        id: 4,
+        title: "Genres",
+        link: "#",
+        subItems: [
+            { id: 1, title: "Action", link: "/genre/action" },
+            { id: 2, title: "Comedy", link: "/genre/comedy" },
+            { id: 3, title: "Drama", link: "/genre/drama" },
+            { id: 4, title: "Fantasy", link: "/genre/fantasy" },
+            { id: 5, title: "Horror", link: "/genre/horror" },
+            { id: 6, title: "Romance", link: "/genre/romance" },
+            { id: 7, title: "Sci-Fi", link: "/genre/western" },
+            { id: 8, title: "Thriller", link: "/genre/thriller" },
+            { id: 9, title: "Mystery", link: "/genre/mystery" },
+            { id: 10, title: "Adventure", link: "/genre/adventure" },
+            { id: 11, title: "Animation", link: "/genre/animation" },
+            { id: 12, title: "Documentary", link: "/genre/documentary" },]
     },
     {
         title :"schedule",
         link : "#",
         id :5,
+        active : false,
     },
     {
         title :"trend",
@@ -35,3 +48,45 @@ export const NavListData = [
         active : true,
     },
 ];
+// export const footerMenu = [
+//     {
+//         title :"اپلیکیشن‌ها",
+//         link : "/",
+//         id :1,
+//     },
+//     {
+//         title :"فرصت های شغلی",
+//         link : "#",
+//         id :2,
+//     },
+//     {
+//         title :" تبلیغات در نماوا",
+//         link : "#",
+//         id :3,
+//     },
+//     {
+//         title :" خرید اشتراک",
+//         link : "#",
+//         id :4,
+//     },
+//     {
+//         title :" کارت هدیه",
+//         link : "#",
+//         id :5,
+//     },
+//     {
+//         title :"سوالات متداول",
+//         link : "#",
+//         id :6,
+//     },
+//     {
+//         title :"درباره نماوا  ",
+//         link : "#",
+//         id :6,
+//     },
+//     {
+//         title :" نماوا مگ",
+//         link : "#",
+//         id :6,
+//     },
+// ];

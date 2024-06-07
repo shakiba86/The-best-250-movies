@@ -1,0 +1,41 @@
+.banner .content {
+    position: relative;
+    max-width: 550px;
+    visibility: visible;
+    opacity: 1;
+     transition: 1s;
+    z-index: 10;
+}
+.movie-title {
+    max-width: 250px;
+    margin-bottom: 20px;
+}
+.banner .content h4 {
+    color: rgba(255,255,255,.6);
+    font-weight:400 ;
+    font-size:20px;
+}
+.banner .content h4 span {
+    padding: 0 10px;
+    border-right: 1px solid rgba(255,255,255,.6);
+}
+.banner .content h4 span:first-child {
+    padding-left:0;
+}
+.banner .content h4 span:first-child {
+    padding-right:0;
+}
+.banner .content h4 span i {
+    background: var(--primary);
+    padding: 0 8px;
+    color:#ffff;
+    display:inline-block;
+    border-radius: 2px;
+}
+.banner .content p {
+    font-weight: 400;
+    color:#ffff;
+    margin:20px 0 30px;
+    line-height:1.5rem;
+    font-size: 1em;
+}
