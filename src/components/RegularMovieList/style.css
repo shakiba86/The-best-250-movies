@@ -1,0 +1,99 @@
+.regular-movielist {
+    padding: 150px 0;
+}
+
+.regular-movielist .section-title {
+    position: relative;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.regular-movielist .section-title:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -30px;
+    height: 5px;
+    width: 50%;
+    background: linear-gradient(90deg, var(--primary), var(--primary), transparent);
+}
+
+.regular-movielist .content .movie-list {
+  padding: 50px 0 40px 0;
+}
+
+.regular-movielist .content .movie-list .movie {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.regular-movielist .content .movie-list .movie:hover {
+    transform: scale(1.05);
+}
+
+.regular-movielist .content .movie-list .movie .movie-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.regular-movielist .content .movie-list .movie h3 {
+    font-size: 1.2rem;
+    margin: 15px 0 5px;
+    color: #f1f1f1;
+}
+
+.regular-movielist .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.regular-movielist .pagination-controls button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-image: linear-gradient(to right, #ff6c1c, #f0a401);
+    padding: 5px 16px;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: .3s;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+}
+
+.regular-movielist .pagination-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.regular-movielist .pagination-controls span {
+    font-size: 1rem;
+    color: #ffffff;
+}
+@media (max-width: 1200px) {
+    .regular-movielist .content .movie-list .movie {
+        flex-basis: 25%;
+    }
+}
+@media (max-width: 750px) {
+    .regular-movielist .content .movie-list .movie {
+        flex-basis: 33.33%;
+    }
+}
+@media (max-width: 500px) {
+    .regular-movielist .content .movie-list .movie {
+        flex-basis: 50%;
+    }
+}

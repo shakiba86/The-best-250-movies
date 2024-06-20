@@ -1,0 +1,111 @@
+
+.schedule ul li  .movie-card {
+    position: relative;
+    border-radius: 8px;
+    background: #000000;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; 
+}
+
+.schedule ul li  .movie-card::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: scale(0);
+    z-index: 2; 
+}
+.schedule ul li  .movie-card p {
+    color: #dddddd;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px 10px;
+    margin-bottom:0
+}
+
+.schedule ul li  .movie-card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: scale(0);
+    z-index: 4; 
+ }
+
+ .schedule ul li  .movie-card .content h4 {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.schedule ul li  .movie-card .content h4::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -10px;
+    height: 5px;
+    width: 80%;
+    background: linear-gradient(90deg, var(--primary), var(--primary), transparent);
+   
+}
+
+.schedule ul li  .movie-card .content ion-icon {
+    font-size: 2.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.schedule ul li  .movie-card .content ion-icon:hover {
+    color: var(--primary);
+}
+
+.schedule ul li .movie-card:hover .content,
+.schedule ul li  .movie-card:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.schedule ul li  .movie-card a {
+    position: relative;
+    z-index: 4; 
+    display: block; 
+   
+}
+@media (max-width: 1300px) {
+    .schedule ul.trending li  {
+        flex-basis: 33.33%;
+        margin-bottom: 26px;
+    }
+  }
+  @media (max-width: 970px) {
+    .schedule ul.trending li  {
+        flex-basis: 50%;
+    }
+  }
+  @media (max-width: 600px) {
+    .schedule ul.trending li {
+        flex-basis: 100%;
+    }
+  }
+  
+  
+  

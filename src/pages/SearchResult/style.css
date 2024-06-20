@@ -1,0 +1,91 @@
+.search-results-wrapper h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin:40px 0;
+}
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    background-color: #121212;
+}
+
+.search-results .movie-card {
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-results .movie-card:hover {
+    transform: scale(1.05);
+}
+
+.search-results .movie-card a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.search-results .movie-card img {
+    width: 100%;
+    border-bottom: 1px solid #333;
+    transition: opacity 0.2s;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.search-results .movie-card:hover img {
+    opacity: 0.85;
+}
+
+.search-results .movie-card .movie-title {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #f1f1f1;
+}
+
+
+.loading, .error-message, .no-results {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    color: red;
+}
+
+.search-results-wrapper .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    gap: 10px;
+}
+
+.search-results-wrapper .pagination button {
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em;
+}
+
+.search-results-wrapper .pagination button:hover {
+    background-color: #ff6c1c;
+    background-image: linear-gradient(to right, #ff6c1c, #f0a401);
+}
+
+.search-results-wrapper .pagination button:disabled {
+    background-color: #e0e0e0;
+    transform: none;
+}

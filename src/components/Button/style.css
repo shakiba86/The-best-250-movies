@@ -1,0 +1,24 @@
+.mainBtn {
+    position: relative;
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    margin-right: 15px;
+    color:#fff;
+    background-image: linear-gradient(to right, #ff6c1c, #f0a401);
+    padding:5px 16px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: .3s;
+    width: 150px;
+    height: 50px;
+    border:none;
+    border-radius: 30px;
+}
+.mainBtn:hover {
+    color:var(--primary);
+    background: #fff;
+}
