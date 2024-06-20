@@ -4,21 +4,17 @@
 }
 .filter .filter-wrapper h1 {
     font-size: 3rem;
-    /* margin-bottom: 100px;
-    margin-top:80px; */
-}
+    }
 .filter ul.buttons {
     padding: 0;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: center; */
     gap: 10px;
 }
 
 .filter ul li .extra-large-button {
-    background-color: #f1f1f1;
-    border: 2px solid transparent;
-    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #EEB500;
+    border-radius: 20px;
+    color:#fff;
     padding: 8px 16px;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
@@ -27,7 +23,7 @@
     font-size:1.2rem;
    }
    .filter ul li .extra-large-button:hover {
-    background-color: #ddd;
+    background-color:linear-gradient(to right, #ff6c1c, #f0a401);
     transform: scale(1.05);
 }
 
@@ -38,15 +34,12 @@
 }
 
 .filter .content .movie-list {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 50px 0 40px 0;
+    align-items: stretch;
+     padding: 50px 0 40px 0;
    }
 
 .filter .content .movie-list .movie {
-    flex: 0 0 auto;
-    width: 200px;
+    height:100%;
     text-align: center;
     transition: transform 0.3s;
 }
@@ -63,13 +56,14 @@
 
 .filter .content .movie-list .movie h3 {
     font-size: 1.2rem;
-    margin: 15px 0 5px;
+    margin:15px 0;
     color:#f1f1f1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .filter .pagination {
-    display: flex;
-    justify-content: center;
     margin: 30px 0;
     gap: 10px;
 }
@@ -94,3 +88,29 @@
     background-color: #e0e0e0;
     transform: none;
 }
+
+@media (max-width: 1300px) {
+    .filter .content .movie-list .movie {
+      flex-basis: 18%;
+      }
+}
+  
+  @media (max-width: 1100px) {
+      .filter .content .movie-list .movie {
+      flex-basis: 33.33%;
+    }
+  }
+  @media (max-width: 850px) {
+    .filter .content .movie-list .movie {
+    flex-basis:50%;
+    }
+  }
+  @media (max-width: 600px) {
+    .filter .content .movie-list .movie {
+      flex-basis:100%;
+    }
+    .filter .content .movie-list .movie:hover {
+        transform: scale(1);
+    }
+  }
+

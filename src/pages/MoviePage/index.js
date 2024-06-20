@@ -3,7 +3,7 @@ import { useEffect,useState } from 'react';
 import API from '../../helpers/api';
 import PrimaryLayout from '../../components/Layouts/PrimaryLayout';
 import RegularMovieList from '../../components/RegularMovieList';
-const api_key = "0c0b05bee8c0e7162a4585261749958a";
+import  getApiKey  from "../../helpers/getKey.js";
 
 export default function MoviePage(){
     const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ export default function MoviePage(){
    },[])
    useEffect(() => {
     setLoading(true);
-    API.get(`/movie/top_rated`, { params: { api_key } })
+    API.get(`/movie/top_rated`, { params: { api_key: getApiKey() } })
         .then(response => {
             setTopRated(response.data.results);
             setLoading(false);
@@ -30,7 +30,7 @@ export default function MoviePage(){
     }, []);
     useEffect(() => {
         setLoading(true);
-        API.get(`/movie/now_playing`, { params: { api_key } })
+        API.get(`/movie/now_playing`, { params: { api_key: getApiKey() } })
             .then(response => {
                 setNowPlaying(response.data.results);
                 setLoading(false);
@@ -42,7 +42,7 @@ export default function MoviePage(){
     }, []);
     useEffect(() => {
         setLoading(true);
-        API.get(`/movie/popular`, { params: { api_key } })
+        API.get(`/movie/popular`, { params: { api_key: getApiKey() } })
             .then(response => {
                 setPopular(response.data.results);
                 setLoading(false);
@@ -57,7 +57,7 @@ export default function MoviePage(){
     return(
         <PrimaryLayout>
             <div className="container-full">
-                <div className='movie-section'>
+                <div className='regular-movielist'>
                 <RegularMovieList listName={toprated} title="Top Rated Movies"/>
                 <RegularMovieList listName={nowPlaying} title="Current Playing Movies"/>
                 <RegularMovieList listName={popular} title="Popular Movies"/>

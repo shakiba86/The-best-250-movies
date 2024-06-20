@@ -1,0 +1,146 @@
+
+.tv-series ul li  .movie-card {
+    position: relative;
+    border-radius: 8px;
+    background: #000000;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; 
+}
+
+.tv-series ul li  .movie-card::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: scale(0);
+    z-index: 2; 
+}
+.tv-series ul li  .movie-card p {
+    color: #dddddd;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 20px 10px;
+    margin-bottom:0
+}
+
+.tv-series ul li  .movie-card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: scale(0);
+    z-index: 4; 
+ }
+
+ .tv-series ul li  .movie-card .content h4 {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.tv-series ul li  .movie-card .content h4::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -10px;
+    height: 5px;
+    width: 80%;
+    background: linear-gradient(90deg, var(--primary), var(--primary), transparent);
+    /* z-index: 1000; */
+}
+
+.tv-series ul li  .movie-card .content ion-icon {
+    font-size: 2.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.tv-series ul li  .movie-card .content ion-icon:hover {
+    color: var(--primary);
+}
+
+.tv-series ul li .movie-card:hover .content,
+.tv-series ul li tv-series .movie-card:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.tv-series ul li  .movie-card a {
+    position: relative;
+    z-index: 4; 
+    display: block; 
+   
+}
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination-controls .prev-button, .pagination-controls .next-button {
+  background-color: #dddddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination-controls .prev-button:hover, .pagination-controls .next-button:hover {
+    background-image: linear-gradient(to right, #ff6c1c, #f0a401);;
+    color: white;
+    border: 2px solid  linear-gradient(to right, #ff6c1c, #f0a401);;
+}
+
+.pagination-controls .prev-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+.loading-message {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 20px 0;
+    color: #ff6c1c;
+}
+@media (max-width: 1300px) {
+    .tv-series ul li  {
+        flex-basis: 33.33%;
+        margin-bottom: 26px;
+    }
+}
+@media (max-width: 970px) {
+    .tv-series ul li  {
+        flex-basis: 50%;
+    }
+}
+@media (max-width: 600px) {
+ .tv-series ul li {
+    flex-basis: 100%;
+ }
+}
+  

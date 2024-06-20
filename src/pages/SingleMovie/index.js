@@ -2,17 +2,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import API from '../../helpers/api';
+import  getApiKey  from "../../helpers/getKey.js";
 import './style.css';
 
 export default function SingleMovie() {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
-    const api_key = "0c0b05bee8c0e7162a4585261749958a";
+   
 
     useEffect(() => {
         setLoading(true);
-        API.get(`/movie/${id}`, { params: { api_key, append_to_response: 'credits,images' } })
+        API.get(`/movie/${id}`, { params: { api_key: getApiKey() , append_to_response: 'credits,images' } })
             .then(response => {
                 setMovie(response.data);
                 console.log(response.data)

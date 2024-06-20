@@ -1,17 +1,16 @@
 
-   section .movie-card {
-    border: none;
+.schedule ul li  .movie-card {
     position: relative;
-    border-radius: 0;
+    border-radius: 8px;
     background: #000000;
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
     transition: 0.5s;
     height: 100%;
-    overflow: hidden; /* Ensure content does not overflow */
-    z-index: 1; /* Ensure the card is above any overlays */
+    overflow: hidden;
+    z-index: 1; 
 }
 
-section .movie-card::before {
+.schedule ul li  .movie-card::before {
     position: absolute;
     content: '';
     top: 0;
@@ -25,16 +24,16 @@ section .movie-card::before {
     transform: scale(0);
     z-index: 2; 
 }
-section .movie-card p {
+.schedule ul li  .movie-card p {
     color: #dddddd;
     font-size: 1.2rem;
     font-weight: 400;
     text-align: center;
     padding: 20px 10px;
-    z-index: 3;
+    margin-bottom:0
 }
 
-section .movie-card .content {
+.schedule ul li  .movie-card .content {
     position: absolute;
     top: 0;
     left: 0;
@@ -46,10 +45,9 @@ section .movie-card .content {
     transition: 0.5s;
     transform: scale(0);
     z-index: 4; 
-    pointer-events: none; 
-}
+ }
 
-section .movie-card .content h4 {
+ .schedule ul li  .movie-card .content h4 {
     position: relative;
     color: #ffffff;
     font-size: 1.2rem;
@@ -58,7 +56,7 @@ section .movie-card .content h4 {
     text-transform: uppercase;
 }
 
-section .movie-card .content h4::before {
+.schedule ul li  .movie-card .content h4::before {
     position: absolute;
     content: '';
     left: 0;
@@ -66,29 +64,48 @@ section .movie-card .content h4::before {
     height: 5px;
     width: 80%;
     background: linear-gradient(90deg, var(--primary), var(--primary), transparent);
-    /* z-index: 1000; */
+   
 }
 
-section .movie-card .content ion-icon {
+.schedule ul li  .movie-card .content ion-icon {
     font-size: 2.5rem;
     transition: 0.3s;
     cursor: pointer;
 }
 
-section .movie-card .content ion-icon:hover {
+.schedule ul li  .movie-card .content ion-icon:hover {
     color: var(--primary);
 }
 
-section .movie-card:hover .content,
-section .movie-card:hover::before {
+.schedule ul li .movie-card:hover .content,
+.schedule ul li  .movie-card:hover::before {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
 }
 
-section .movie-card a {
+.schedule ul li  .movie-card a {
     position: relative;
     z-index: 4; 
     display: block; 
    
 }
+@media (max-width: 1300px) {
+    .schedule ul.trending li  {
+        flex-basis: 33.33%;
+        margin-bottom: 26px;
+    }
+  }
+  @media (max-width: 970px) {
+    .schedule ul.trending li  {
+        flex-basis: 50%;
+    }
+  }
+  @media (max-width: 600px) {
+    .schedule ul.trending li {
+        flex-basis: 100%;
+    }
+  }
+  
+  
+  

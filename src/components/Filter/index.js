@@ -3,10 +3,10 @@ import './style.css';
 import { Fragment, useEffect, useState } from "react";
 import API from '../../helpers/api';
 import getImage from '../../helpers/getImage';
-const api_key = "0c0b05bee8c0e7162a4585261749958a";
+import  getApiKey  from "../../helpers/getKey.js";
 
 
-export default function Filter(props) {
+export default function Filter() {
     const [loading, setLoading] = useState(false);
     const [genres, setGenres] = useState([]);
     const [selectedGenre, setSelectedGenre] = useState(null);
@@ -16,7 +16,7 @@ export default function Filter(props) {
 
     useEffect(() => {
         setLoading(true);
-        API.get(`genre/movie/list`, { params: { api_key } })
+        API.get(`genre/movie/list`, { params: { api_key: getApiKey() } })
             .then(response => {
                 setGenres(response.data.genres);
                 setLoading(false);
@@ -30,7 +30,7 @@ export default function Filter(props) {
     useEffect(() => {
         if (selectedGenre) {
             setLoading(true);
-            API.get(`discover/movie`, { params: { api_key, with_genres: selectedGenre, page } })
+            API.get(`discover/movie`, { params: { api_key: getApiKey() , with_genres: selectedGenre, page } })
                 .then(response => {
                     setMovies(response.data.results);
                     setTotalPages(response.data.total_pages);
@@ -67,24 +67,24 @@ export default function Filter(props) {
             return <p>Loading...</p>;
         }
         return (
-            <div className="movie-list">
+            <ul className="movie-list row justify-center">
                 {movies.map(movie => (
-                    <div key={movie.id} className="movie">
+                    <li key={movie.id} className="col-2 movie">
                         <img 
                             src={getImage(movie.poster_path)} 
                             alt={movie.title} 
                             className="movie-poster"
                         />
                         <h3>{movie.title}</h3>
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
         );
     }
 
     function renderPagination() {
         return (
-            <div className="pagination">
+            <div className="pagination row justify-center">
                 <button
                     onClick={() => setPage(page - 1)}
                     disabled={page === 1}
@@ -107,7 +107,7 @@ export default function Filter(props) {
                 <div className='container-full'>
                     <div className="filter-wrapper ">
                         <h1 className='mb-25 mt-16'>Explore our most popular titles</h1>
-                        <ul className='buttons row justify-centent'>
+                        <ul className='buttons row justify-center'>
                             {renderGenres()}
                         </ul>
                     </div>

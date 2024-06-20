@@ -18,3 +18,9 @@
     -webkit-mask-clip:text ,padding-box;
     -webkit-mask-composite: xor;
 }
+@media (max-width: 1240px) {
+    .banner .date h2 {
+      font-size: 5rem;
+    }
+  }
+  

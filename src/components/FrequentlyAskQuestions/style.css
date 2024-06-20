@@ -27,7 +27,8 @@
     Transition: all ease-in 1s;
   }
 .faq-box .faq-style .faq-description{
-    width: 35%;
+    width:50%;
+    text-align:center;
     padding-right: 40px;
     transform: translateX(-250%);
     Transition: all ease-in 1s;
@@ -50,7 +51,7 @@
     transform: translateX(250%);
     Transition: all ease-in 1s;
     opacity: 0;
-    width: 65%;
+    width: 45%;
 }
 .faq-box .faq-style .faq .faq-holder {
     background: #fff;

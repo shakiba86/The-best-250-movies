@@ -3,9 +3,7 @@
   }
   
   .coming-card a.add-to-calendar {
-    position: relative;
-    text-decoration: none;
-    background: var(--primary);
+    background-image: linear-gradient(to right, #ff6c1c, #f0a401);
     color: #ffffff;
     font-size: 1rem;
     text-transform: uppercase;
@@ -22,5 +20,11 @@
   
   .coming-card a:hover {
     background: #191919;
+  }
+  @media (max-width: 1320px) {
+    .coming-card a.add-to-calendar {
+      text-transform: none;
+    }
+    
   }
   

@@ -1,11 +1,9 @@
 import './style.css';
 
-export default function MovieDate({movie, onSlideClick }) {
-    const handleSlideClick = () => {
-        onSlideClick(movie); // Pass the clicked movie to the parent component
-    };
+export default function MovieDate({movie }) {
+    
     return(
-        <div className="date" onClick={handleSlideClick}>
+        <div className="date" >
             <h2> on{movie.release_date}</h2>
         </div>
     )

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import API from '../../helpers/api';
-const api_key = "0c0b05bee8c0e7162a4585261749958a";
+import  getApiKey  from "../../helpers/getKey.js";
 
 
 export default function Genres() {
@@ -9,7 +9,7 @@ export default function Genres() {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(true);
-        API.get(`genre/movie/list`, { params: { api_key } })
+        API.get(`genre/movie/list`, { params:{ api_key: getApiKey() } })
             .then(response => {
                 setGenres(response.data.genres);
                 setLoading(false);

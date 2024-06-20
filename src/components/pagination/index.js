@@ -9,7 +9,7 @@ const Pagination = ({ moviesPerPage, totalMovies, paginate, currentPage }) => {
 
     return (
         <nav>
-            <ul className="pagination mt-8">
+            <ul className="pagination d-flex justify-center mt-8">
                 {pageNumbers.map(number => (
                     <li key={number} className={`page-item ${currentPage === number ? 'active' : ''}`}>
                         <button onClick={() => paginate(number)} className="page-link" type="button">

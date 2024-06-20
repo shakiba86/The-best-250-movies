@@ -6,13 +6,14 @@ import MovieContent from "../MovieContent";
 import MovieDate from "../MovieDate";
 import MovieTrailer from "../MovieTrailer";
 import MovieSwiper from "../MovieSwiper";
+import  getApiKey  from "../../helpers/getKey.js";
 
 export default function Banner() {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentBackground, setCurrentBackground] = useState("");
     const [selectedMovie, setSelectedMovie] = useState({});
-    const api_key = "0c0b05bee8c0e7162a4585261749958a";
+    
     const bannerRef = useRef(null);
 
     useEffect(() => {
@@ -27,7 +28,7 @@ export default function Banner() {
 
     function getApi() {
         setLoading(true);
-        API.get(`movie/upcoming`, { params: { api_key } })
+        API.get(`movie/upcoming`, { params: { api_key: getApiKey() } })
             .then((response) => {
                 const movieResults = response.data.results;
                 setMovies(movieResults);
@@ -48,6 +49,7 @@ export default function Banner() {
         if (clickedMovie) {
             setSelectedMovie(clickedMovie);
             setCurrentBackground(getImage(clickedMovie.backdrop_path));
+          
         }
     };
 
@@ -65,9 +67,10 @@ export default function Banner() {
                                 <MovieContent movie={selectedMovie} />
                             </div>
                             <div className="col-6 d-flex flex-column align-items-center justify-content-center">
-                                <MovieDate movie={selectedMovie} />
-                                <MovieTrailer movie={selectedMovie} />
+                                <MovieDate movie={selectedMovie} key={selectedMovie.id}/>
+                              
                             </div>
+                            <MovieTrailer movie={selectedMovie} />
                         </div>
                     </div>
                 </div>

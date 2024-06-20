@@ -1,45 +1,45 @@
+// // TvSeries.js
 import { useState, useEffect } from "react";
 import Card from "../Card";
 import API from "../../helpers/api";
 import './style.css';
-import Pagination from "../pagination";
-import Filter from "../Filter";
 import  getApiKey  from "../../helpers/getKey.js";
 
-export default function Schedule() {
+export default function TvSeries() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const moviesPerPage = 6; 
+    const moviesPerPage = 6;
   
 
     useEffect(() => {
         setLoading(true);
-        API.get(`/trending/movie/day`, { params: { api_key: getApiKey() } })
+        API.get(`/tv/airing_today`, { params: {  api_key: getApiKey() , page: currentPage } })
             .then(response => {
-                setData(response.data.results);
+                setData(prevData => [...prevData, ...response.data.results]);
                 setLoading(false);
             })
             .catch(error => {
                 setLoading(false);
                 console.log(error.message);
             });
-    }, []);
+    }, [currentPage]);
 
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    const handleNextPage = () => setCurrentPage(prevPage => prevPage + 1);
+    const handlePrevPage = () => setCurrentPage(prevPage => (prevPage > 1 ? prevPage - 1 : 1));
 
     const indexOfLastMovie = currentPage * moviesPerPage;
     const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
     const currentMovies = data.slice(indexOfFirstMovie, indexOfLastMovie);
 
     return (
-        <section className="schedule">
+        <section className="tv-series">
             <div className="container-full">
-                <div>
-                    <h4 className="section-title">Opening This Week</h4>
+                <div >
+                    <h4 className="section-title">TV shows airing today</h4>
                 </div>
-                <ul className="row trending mt-16">
-                    {loading ? (
+                <ul className="row mt-16">
+                    {loading && currentPage === 1 ? (
                         <p>Loading...</p>
                     ) : currentMovies.length > 0 ? (
                         currentMovies.map(movie => <Card key={movie.id} movie={movie} />)
@@ -47,14 +47,14 @@ export default function Schedule() {
                         <p>No movies found</p>
                     )}
                 </ul>
-                <Pagination
-                    moviesPerPage={moviesPerPage}
-                    totalMovies={data.length}
-                    paginate={paginate}
-                    currentPage={currentPage}
-                />
-                <Filter></Filter>
+                {loading && currentPage > 1 && <p className="loading-message">Loading more...</p>}
+                <div className="pagination-controls">
+                    <button className="prev-button" onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
+                    <button className="next-button" onClick={handleNextPage}>Next</button>
+                </div>
+                {/* <Filter /> */}
             </div>
         </section>
     );
 }
+

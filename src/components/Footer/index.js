@@ -20,13 +20,13 @@ export default function Footer() {
       return (
         <footer id="footer" className="footer">
           <div className="footer-top">
-            <div className="container">
+            <div className="container-full">
               <div className="row">
-                <div className="col-5 footer-info">
-                  <a href="/" className="logo d-flex align-items-center">
+                <div className="col-5 footer-info mb-7">
+                  <a href="/" className="logo d-flex align-items-center mb-4">
                     <span>CINEMA</span>
                   </a>
-                  <p>
+                  <p className="mt-8">
                     Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
                     nada terra videa magna derita valies darta donna mare fermentum
                     iaculis eu non diam phasellus.
@@ -57,7 +57,7 @@ export default function Footer() {
                 </div>
     
                 <div className="col-2 footer-links">
-                  <h4>Our Cinemas</h4>
+                  <h4>Nikifilm</h4>
                   <ul>
                     {locations.map(link => (
                       <FooterNavItem key={link} name={link} />
@@ -83,7 +83,7 @@ export default function Footer() {
             </div>
           </div>
     
-          <div className="container">
+          <div className="container-full">
             <div className="copyright">
               &copy; Copyright
               <strong>

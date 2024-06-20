@@ -2,11 +2,11 @@ import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import MoviePage from "./pages/MoviePage";
 import SingleMovie from "./pages/SingleMovie";
-// import NotFound from "./Pages/NotFound";
-// import SingeItem from "./Pages/sigleItem";
+import NotFound from "./pages/NotFound";
 import Genres from "./pages/Genres";
 import SingleGenre from "./pages/SingleGenre";
-// import SearchResult from "./Pages/searchresult";
+import SearchResult from "./pages/SearchResult";
+import ContactUs from "./pages/ContactUs";
 
 const routes = createBrowserRouter([
     {
@@ -25,18 +25,22 @@ const routes = createBrowserRouter([
         path:"/genres",
         element:<Genres/>,
     },
-    // {
-    //     path:"/search",
-    //     element:<SearchResult/>,
-    // },
+    {
+        path:"/search",
+        element:<SearchResult/>,
+    },
+    {
+        path:"/contactus",
+        element:<ContactUs/>,
+    },
     {
         path:"/genres/:genreId",
         element:<SingleGenre/>,
     },
-    // {
-    //     path:"*",
-    //     element:<NotFound/>,
-    // }
+    {
+        path:"*",
+        element:<NotFound/>,
+    }
 ])
 export default function Router() {
     return(
